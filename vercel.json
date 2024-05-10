@@ -1,3 +1,9 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "PlantDiseaseModel.py" }]
+  "version": 2,
+  "builds": [
+    { "src": "PlantDiseaseModel.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/PlantDiseaseModel.py" }
+  ]
 }
