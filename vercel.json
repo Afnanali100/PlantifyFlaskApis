@@ -1,0 +1,14 @@
+{
+    "builds":[
+        {
+            "src":"PlantDiseaseModel.py",
+            "use":"@vercel/python"
+        }
+    ],
+    "routes":[
+        {
+            "src":"/(.*)",
+            "dest":"PlantDiseaseModel.py"
+        }
+    ]
+}
