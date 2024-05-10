@@ -8,6 +8,7 @@ import torch
 import io
 import json
 import timm
+import json
 import torch.nn as nn
 
 
@@ -241,6 +242,44 @@ def predict_image(transformed_image):
         return {"status": 500, "message": "Internal Server Error", "error_details": str(e)}
 
 
+
+# Load disease data from JSON file
+with open('Treatment_Recommendions.json', 'r') as f:
+    disease_data = json.load(f)
+
+# Define a new endpoint to get disease recommendations
+@app.route("/get-disease-recommendation", methods=["GET"])
+def get_disease_recommendation():
+    try:
+        # Extract disease name from query parameters
+        disease_name = request.args.get('disease_name')
+
+        # Check if disease name is provided
+        if not disease_name:
+            result = {"status": 400, "message": "Bad Request: 'disease_name' query parameter is missing"}
+            return jsonify(result), 400
+
+        # Search for disease recommendation
+        recommendation = None
+        for disease in disease_data:
+            if disease['name'] == disease_name:
+                recommendation = disease['description']
+                break
+
+        if recommendation:
+            result = {"status": 200, "message": "Disease recommendation found", "recommendation": recommendation}
+            return jsonify(result), 200
+        else:
+            result = {"status": 404, "message": "Disease recommendation not found"}
+            return jsonify(result), 404
+
+    except Exception as e:
+        app.logger.error(f"Error retrieving disease recommendation: {str(e)}")
+        result = {"status": 500, "message": "Internal Server Error", "error_details": str(e)}
+        return jsonify(result), 500
+
+
+
 # Custom error handler for 404 errors
 @app.errorhandler(404)
 def not_found_error(error):
@@ -260,4 +299,4 @@ def handle_generic_error(error):
     return jsonify(result), 500
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
