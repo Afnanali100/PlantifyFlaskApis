@@ -7,10 +7,9 @@ from torchvision import transforms
 import torch
 import io
 import json
-import matplotlib.pyplot as plt
-import numpy as np
 import timm
 import torch.nn as nn
+
 
 
 app = Flask(__name__)
