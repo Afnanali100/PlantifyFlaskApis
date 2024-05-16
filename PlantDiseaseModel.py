@@ -37,7 +37,7 @@ class PlantDiseaseModel(nn.Module):
         
         # Add custom fully connected layers
         self.fc = nn.Sequential(
-           nn.Linear(1000, 512),  # Adjust input size to match the output size of the backbone
+           nn.Linear(1000, 512),  
            nn.ReLU(),
            nn.Linear(512, num_classes)
         )
@@ -49,11 +49,26 @@ class PlantDiseaseModel(nn.Module):
         x = self.fc(x)
         return x
 
-        
+# Load the model weights from config.json
+with open('config.json') as config_file:
+    config = json.load(config_file)
+
+model_weights_path = config['model_path']
 
 # Instantiate the model
 plant_disease_model = PlantDiseaseModel(num_classes)
-model_weights_path = r'disease_best_model.pth'
+
+# Load the pre-trained weights
+try:
+    checkpoint = torch.load(model_weights_path, map_location=torch.device('cpu'))
+    # Load only compatible layers
+    model_dict = plant_disease_model.state_dict()
+    pretrained_dict = {k: v for k, v in checkpoint.items() if k in model_dict}
+    plant_disease_model.load_state_dict(pretrained_dict, strict=False)
+    plant_disease_model.eval()  # Set model to evaluation mode
+    app.logger.info("Pre-trained weights loaded successfully.")
+except Exception as e:
+    app.logger.error(f"Error loading pre-trained weights: {str(e)}")
 
 # Load the pre-trained weights
 try:
