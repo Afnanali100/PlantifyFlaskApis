@@ -1,127 +1,127 @@
 [
   {
     "id": "0",
-    "name": "Apple__alternaria_leaf_spot",
+    "name": "Apple___alternaria_leaf_spot",
     "description": "Alternaria Thriving Conditions: Alternaria species thrive in various conditions, with a preference for cool and damp environments. Heavy rainfall, especially in spring or fall, can trigger an outbreak. Optimal conditions include humidity around 85% and temperatures of 55-85°F (12-29°C). Regions like the Pacific Northwest, New England, Olde England, Canada, and Northern Europe are particularly susceptible. Alternaria often hides in shady areas like under trees and tall grasses, ideal for its growth.\nControl: Immediately remove infected plant parts and burn them. Treat surrounding plants with fungicides containing potassium bicarbonate, powdered sulfur, Bacillus subtilis, copper hydroxide, or mancozeb. Avoid planting the same type of crops in the affected area for three to five years after the growing season ends. Regular crop rotation and deep tilling can prevent many soil-borne pathogens. Ensure this is done during dry heat waves to avoid spreading fungal spores. Clean up garden debris in spring and autumn, and remove fallen leaves from around plant stems as they grow.\nPrevention: Deep tilling during hot, dry weather can effectively eradicate it. Allow the sun to destroy the spores over a few days. Delay planting seedlings until after the last frost date and ensure the soil is adequately warm. Use drip irrigation at ground level and avoid overhead watering. Trim excessive foliage during humid periods to improve air circulation around leaves.\n"
   },
   {
     "id": "1",
-    "name": "Apple_black_rot",
+    "name": "Apple___black_rot",
     "description": "Cause: Black rot is a disease of apples that infects fruit, leaves, and bark caused by the fungus Botryosphaeria obtusa.\nTreatment: Treating black rot on apple trees starts with sanitation. Since fungal spores overwinter on fallen leaves, mummified fruits, dead bark, and cankers, it's important to keep all the fallen debris and dead fruit cleaned up and away from the tree. During the winter, check for red cankers and remove them by cutting them out or pruning away the affected limbs at least 6 inches (15 cm.) beyond the wound. Destroy all infected tissue immediately and keep a watchful eye out for new signs of infection. Once black rot disease is under control in your tree and you're again harvesting healthy fruits, make sure to remove any injured or insect-invaded fruits to avoid re-infection.\nPrevention: You can use general-purpose fungicides, like copper-based sprays and lime sulfur, can be used to control black rot, but nothing will improve apple black rot like removing all sources of spores.\n"
   },
   {
     "id": "2",
-    "name": "Apple_brown_spot",
+    "name": "Apple___brown_spot",
     "description": "Cause: Apple scab is affecting the tree, a disease more prevalent in regions with cool, damp spring weather, caused by the fungus Venturia inaequalis.\nManaging and Treating: Dealing with apple scab involves a combination of sanitation, using resistant varieties, and fungicides. Here are steps to manage and treat the disease:\nChoose Resistant Cultivars: Select resistant varieties whenever possible as the primary defense.\nProper Tree Planting: Ensure proper planting in full sun with adequate space between trees for air circulation, reducing moisture on leaves.\nPrune Infected Leaves: Rake under trees, prune, and dispose of infected leaves to minimize fungal spores for the next spring cycle.\nApply Urea: Apply urea after harvest, before fall leaf drop, to accelerate leaf decomposition.\nAdjust Watering Schedule: Water in the evening or early morning to allow leaves to dry, avoiding overhead irrigation to reduce apple scab risk.\nUse Compost Cover: Spread compost under trees to prevent splash dispersal of fungal spores, providing nutrients and containing infection.\nSpray Liquid Copper Soap: Apply liquid copper soap early, two weeks before symptoms or at first appearance, repeating every 7 to 10 days until blossom drop for effective control.\n"
   },
   {
     "id": "3",
-    "name": "Apple_gray_spot",
+    "name": "Apple___gray_spot",
     "description": "Cause: This disease is caused by the fungi Sphaerotheca species or Podosphaera species and is most prevalent during dry, hot periods. The fungus causes gray-white powdery patches on leaves and new shoots. New growth is often stunted, curled and distorted. Fruit may turn russet-colored and develop poorly.\nPrevention & Treatment: Prune out branches or infected twigs early in the season. If disease is severe enough to warrant chemical control, choose one of the following fungicides for use on apple trees and crabapple trees: thiophanate-methyl, myclobutanil, a copper fungicide or sulfur.\n"
   },
   {
     "id": "4",
-    "name": "Apple_healthy",
+    "name": "Apple___healthy",
     "description": "Don't worry the plant is healthy.\n"
   },
   {
     "id": "5",
-    "name": "Apple_rust",
+    "name": "Apple___rust",
     "description": "Cause: Apple rust is caused by the fungus Gymnosporangium juniperi-virginianae Schwein, is a common disease that affects species from the rose family, including apple and hawthorns.\nPrevention & Treatment: Plant resistant varieties. If possible, remove Eastern red cedars from the area or prune out galls on nearby cedars. If disease is severe enough to warrant chemical control, select from the chemicals below. For apples select one of the following: mancozeb (do not apply after bloom), myclobutanil or sulfur. The fungicide for use on crabapple trees is mancozeb (do not spray after bloom) or myclobutanil.\n"
   },
   {
     "id": "6",
-    "name": "Apple_scab",
+    "name": "Apple___scab",
     "description": "Causes of Apple Scab: Apple scab is caused by the fungus Venturia inaequalis, which survives winter in diseased leaves on the ground. In spring, the fungus produces spores that spread through wind, rain, or irrigation, infecting new growth on the same or nearby trees. Spores germinate in moist conditions around 70°F, leading to secondary infections every 9 to 17 days during warm, wet weather.\nControl: Prune and dispose of infected leaves, spray trees weekly with neem oil, and remove fallen leaves before May. Choose scab-resistant varieties like William’s Pride, Liberty, or Easy-Gro.\nPrevention: Choose disease-resistant varieties or plant dwarf trees. Practice proper sanitation by removing fallen leaves year-round and avoid composting infected leaves. Pruning helps maintain an open canopy to prevent spore germination. Fungicide spraying is a last resort after consecutive leaf loss.\n"
   },
   {
     "id": "7",
-    "name": "Bell_pepper_bacterial_spot",
+    "name": "Bell_pepper___bacterial_spot",
     "description": "Causes of Bacterial Leaf Spot of Pepper: The bacterium Xanthomonas campestris pv. vesicatoria is responsible for bacterial leaf spot, thriving in hot summers with frequent rainfall. Plant debris in the soil and infected seeds spread the bacterium.\nTreatment and Prevention of Bacterial Leaf Spot: Once symptoms appear, it's too late to save the pepper plants. To prevent future issues, practice crop rotation, avoiding planting peppers or tomatoes in the same location for four or five years. Remove and destroy crop debris, avoiding composting. Till or turn the soil to bury remaining bacteria. Reduce splatter by using a soaker hose and avoiding overhead watering. Stay out of the garden on wet days to prevent disease spread. Purchase certified disease-free seeds and seedlings, avoiding saving seeds if there's a history of bacterial leaf spot on peppers.\n"
   },
   {
     "id": "8",
-    "name": "Bell_pepper_healthy",
+    "name": "Bell_pepper___healthy",
     "description": "Don't worry the plant is healthy.\n"
   },
   {
     "id": "9",
-    "name": "Blueberry_healthy",
+    "name": "Blueberry___healthy",
     "description": "Don't worry the plant is healthy.\n"
   },
   {
     "id": "10",
-    "name": "Cassava_bacterial_blight",
+    "name": "Cassava___bacterial_blight",
     "description": "Causes and Transmission of CBB: CBB is caused by a bacterium (Xanthomonas campestris pv. manihotis) and spreads when the bacterial organism is transferred from an infected plant to a susceptible one. The bacterium often enters plants through wounds on leaves and stems, and tools like cutlasses can transmit the disease if not cleaned. Infected plant stems are sources of the bacterium, and the disease spreads through cuttings in new farms. Grasshoppers and other insects feeding on cassava can also transmit the disease within a farm or over long distances.\nControl:\nResistant Varieties: In CBB endemic areas, farmers should plant resistant cassava varieties to sustain economic yields.\nRouging of Plants: Regularly inspect and remove plants with CBB symptoms, burning them to prevent disease spread.\nFallow: If outbreaks occur, harvest roots immediately, destroy plant debris through burning or deep plowing, and let the land fallow for at least three years before replanting cassava.\nCrop Rotation: After destroying infected debris, plant cereals, grains, or legumes on the same land, returning to cassava after three seasons.\nQuarantine Measures: Implement localized quarantine measures to prevent the movement of planting materials from CBB outbreak zones to other communities.\nUse of Healthy Planting Material: Harvest stems from disease-free plants and avoid using materials from farms suspected of CBB attack.\nPest Control: Implement environmentally friendly measures to control grasshoppers and other insects that can carry the bacterium, reducing the spread of CBB.\n"
   },
   {
     "id": "11",
-    "name": "Cassava_brown_streak_disease",
+    "name": "Cassava___brown_streak_disease",
     "description": "Causes: The cassava brown streak virus (CBSV) is responsible for the symptoms, primarily transmitted by mites, aphids, and the whitefly Bemisia tabaci. However, human transportation of infected cuttings and poor field hygiene are the main contributors to disease spread. Varieties of cassava exhibit varying sensitivity to CBSV, with yield losses ranging from 18-70% depending on infection areas and environmental factors. Quarantine measures are necessary to prevent the movement of infected cuttings to unaffected regions.\nTreatment: Integrated approaches combining preventive measures and biological treatments are preferred, as chemical applications are ineffective against CBSV. Vector control, particularly targeting the whitefly population, is crucial. Efforts focus on developing resistant cassava cultivars and managing root rot caused by CBSV.\nPreventive Measures:\nUse certified virus-free planting material.\nGrow resistant or tolerant cassava varieties.\nMonitor fields regularly and remove diseased plants promptly.\nDestroy removed plants immediately to prevent further spread.\nMaintain weed-free fields to deter insect hosts.\nDisinfect tools between field work sessions.\nAvoid transporting cuttings to new areas.\n"
   },
   {
     "id": "12",
-    "name": "Cassava_green_mottle",
+    "name": "Cassava___green_mottle",
     "description": "Cause: Cassava Mosaic Virus (CMV) is the culprit, transmitted by whiteflies and targeting cassava plant leaves. The virus disrupts the plant's growth and yield.\nControl: Cultural control is crucial in minimizing the disease's impact:\nBefore planting:\n• Only use cuttings from symptom-free plants with high root yields.\nDuring growth:\n• Immediately remove symptomatic plants and burn them. Do not wait until harvest, as symptoms may fade, making infected plants harder to identify.\n"
   },
   {
     "id": "13",
-    "name": "Cassava_healthy",
+    "name": "Cassava___healthy",
     "description": "Don't worry the plant is healthy.\n"
   },
   {
     "id": "14",
-    "name": "Cassava_mosaic_disease",
+    "name": "Cassava___mosaic_disease",
     "description": "Cause: Mosaic viruses are caused by a variety of cassava mosaic geminiviruses (CMGs which are destructive parasites that can affect plants, gardens, and crops at a molecular level. They spread through weeds, infected seeds, plants, or certain insects. Mosaic viruses persist in perennial weeds during winter and are transmitted by insects like aphids, leafhoppers, whiteflies, and cucumber beetles. Aphids, especially, are common carriers, making aphid control crucial for garden health. Infected soil, seeds, containers, and plant divisions can also spread the virus.\nTreatment and Prevention: There's no cure for mosaic virus once a plant is infected, so prevention is key:\nFungicides don't work against viral diseases like mosaic virus.\nUse resistant plant varieties and buy transplants from trusted sources.\nAvoid saving seeds from infected crops.\nEmploy natural pest control methods to reduce disease-carrying insects.\nRemove perennial weeds within 100 yards of your garden.\nClean and disinfect gardening tools regularly to prevent transmission.\nAvoid gardening in wet conditions to prevent virus spread.\nDon't use tobacco near susceptible plants, as tobacco products can spread the virus.\nRemove and destroy infected plants.\n"
   },
   {
     "id": "15",
-    "name": "Cherry_healthy",
+    "name": "Cherry___healthy",
     "description": "Don't worry the plant is healthy.\n"
   },
   {
     "id": "16",
-    "name": "Cherry_powdery_mildew",
+    "name": "Cherry___powdery_mildew",
     "description": "Causes: Powdery mildew is caused by various closely related fungal species, each with a specific host range. The disease thrives in conditions of low soil moisture and high humidity at the plant surface, typically appearing later in the growing season on outdoor plants.\nTreatment: Effectively treat powdery mildew with various home remedies and fungicides. Milk sprays (40% milk and 60% water) and a solution of baking soda and liquid soap in water are effective. Regular washing of foliage disrupts spore-releasing cycles. Sulfur or copper-based fungicides, potassium bicarbonate, and broad-spectrum bio-fungicides. Indoor growers can use a Sulfur Burner/Vaporizer.\nPrevention:\nPlant resistant cultivars in sunny locations.\nPrune or stake plants for better air circulation, disinfecting tools after each cut.\nRemove diseased foliage and clean fallen debris.\nApply a thick layer of mulch to prevent spore splashing.\nWater in the morning and use drip irrigation to keep foliage dry.\nUse slow-release, organic fertilizer, avoiding excess nitrogen.\n"
   },
   {
     "id": "17",
-    "name": "Corn_common_rust",
+    "name": "Corn___common_rust",
     "description": "Causes: Common rust is caused by the fungus Puccinia sorghi. Late infections have minimal impact on yield. The fungus overwinters in southern states and its spores are carried by wind to northern states during the growing season. Disease development is favored by cool, moist weather (60 – 70◦ F).\nTreatment: At the first sign of infection, promptly apply fungicide to the corn. Two applications may be needed for effective control.\nPrevention:\nPlant corn early in the growing season to reduce disease risk.\nUse disease-resistant cultivars like ‘Xtra Tender 277’, ‘Snowmass’, and others.\nMonitor for pustules from the whorl stage onwards and spray when 80% of leaves have them. Avoid planting near fields with different corn maturities and those with poor air circulation.\n"
   },
   {
     "id": "18",
-    "name": "Corn_gray_leaf_spot",
+    "name": "Corn___gray_leaf_spot",
     "description": "Causes: Gray leaf spot (GLS) is caused by the fungus Cercospora zeae-maydis. GLS can occur almost every growing season in corn, particularly in the North Central and Southeast regions. It is one of the most common and aggressive diseases affecting corn.\nManagement: • To mitigate GLS, preventive measures such as using less susceptible corn varieties, practicing crop rotation, removing crop residue, or employing tillage to speed up residue decomposition can be effective. GLS fungi survive in corn residue and can accumulate in continuous corn or reduced tillage systems. A rotation of at least two years is advised for fields with conservation tillage to reduce inoculum levels. Seek advice from your seed supplier regarding resistant corn products and other agronomic benefits.\n• Regular scouting for GLS should begin around the V-10 to V-14 stages to assess the severity of the infection. If GLS is detected and weather conditions favor disease progression, applying fungicides during the tasseling to early silk growth stages (VT to R1) can protect against yield loss. Fungicides containing strobilurin and strobilurin/triazole combinations are most effective in preventing yield loss due to GLS.\n"
   },
   {
     "id": "19",
-    "name": "Corn_healthy",
+    "name": "Corn___healthy",
     "description": "Don't worry the plant is healthy.\n"
   },
   {
     "id": "20",
-    "name": "Corn_northern_leaf_blight",
+    "name": "Corn___northern_leaf_blight",
     "description": "Causes: Northern corn leaf blight (NCLB), caused by the fungus Exserohilum turcicum, is becoming a more significant issue in the U.S. Corn Belt. The disease has been consistently present in Indiana and its prevalence has increased since the mid- to late 2000s.\nTreatment: Managing northern corn leaf blight typically involves the use of fungicides. While most home gardeners may not need this step, it can be considered for severe infections. The application of fungicides is usually recommended around the time of silking when the infection tends to start.\nManagement and Prevention:\nChoose corn varieties or hybrids that are resistant or moderately resistant to northern corn leaf blight.\nEnsure proper drainage for your corn crop to avoid prolonged leaf wetness, as the fungus requires 6 to 18 hours of wetness to develop.\nProvide adequate spacing between corn plants to facilitate airflow, and water in the morning to allow leaves to dry during the day.\nSince the fungus overwinters in plant material, it's crucial to manage infected plants. Tilling them into the soil is one approach, but in small gardens, removing and destroying affected plants may be more practical.\n"
   },
   {
     "id": "21",
-    "name": "Grape_black_measles",
+    "name": "Grape___black_measles",
     "description": "Causes: Measles and grapevine decline are caused by two genera of fungi: Phaeomoniella chlamydospora and Phaeoacremonium spp. These fungi affect young vineyards.\nTreatment: There isn’t a specific treatment. Wine grape growers with small vineyards often remove infected fruit before harvest. Raisins affected by measles are discarded during harvest or at the packing house. Table grape growers may leave affected fruit on the vine.\nManagement: Currently, there are no effective management strategies for measles. Ongoing research focuses on protecting pruning wounds from fungal infections to minimize colonization by suspect fungi.\n"
   },
   {
     "id": "22",
-    "name": "Grape_black_rot",
+    "name": "Grape___black_rot",
     "description": "Causes: Black rot is caused by the fungus Guignardia bidwellii and thrives in warm, humid climates.\nTreating Black Rot: Treating grapevines affected by black rot involves different approaches depending on the severity: Cultural Control Measures:\nSanitation: Remove debris and infected parts to prevent reinfection.\nFungicide Sprays: Apply fungicides regularly to protect vines. Biological Control: Introduce non-pathogenic microorganisms to the vineyard ecosystem to protect against harmful organisms. Chemical Control Measures: Use fungicides or bactericides to control black rot, but be cautious of drawbacks like chemical resistance. Natural Remedies:\nBaking Soda Solution: Apply weekly until symptoms vanish.\nNeem Oil: Acts as a natural repellent against pests like snails. Preventing Black Rot: Prevention is key:\nRegular Pruning: Remove infected parts promptly.\nMaintain Cleanliness: Remove weeds that may harbor pests.\nUse Resistant Varieties: Choose grape varieties bred for disease resistance.\n"
   },
   {
     "id": "23",
-    "name": "Grape_healthy",
+    "name": "Grape___healthy",
     "description": "Don't worry the plant is healthy.\n"
   },
   {
     "id": "24",
-    "name": "Grape_isariopsis_leaf_spot",
+    "name": "Grape___isariopsis_leaf_spot",
     "description": "Cause: It is caused by the Pseudocercospora vitis fungus. Special fungicides are used as a remedy to limit the spread of the disease\nManagement:\nPromote plant vigor.\nIncrease air circulation to encourage drying of plant tissues (pruning, thinning, spacing, and managing weeds).\nApply fungicides (especially early season fungicides used to control primary diseases)\nUse the essential oil of lemon grass\n"
   },
   {
@@ -131,22 +131,22 @@
   },
   {
     "id": "26",
-    "name": "Orange_citrus_greening",
+    "name": "Orange___citrus_greening",
     "description": "Cause: Citrus greening is caused by the Asian citrus psyllid (ACP), a small sap-sucking insect that carries Candidatus liberibacter asiaticus (CLas), the bacterium responsible for HLB. Psyllids transmit the disease while feeding, and once the disease takes hold, there is no cure for the affected tree.\nPrevention: There is no cure for citrus greening, underscoring the importance of early detection to swiftly remove infected trees and halt the bacteria's spread. Infected trees become unproductive and act as a reservoir for this economically harmful disease. Common citrus fruit trees, including oranges, limes, and lemons, as well as ornamentals like orange jasmine, jackfruit, and limeberry, can be affected. Erecting a tightly woven screen house around disease-free citrus trees may help prevent citrus greening, considering psyllids are small. Insecticides, although potentially harmful to pollinating bees, could be useful in citrus greening quarantine zones, with options like chlorantraniliprole, spinetoram, dimethoate, or formetanate for treating citrus tree leaves.\n"
   },
   {
     "id": "27",
-    "name": "Peach_bacterial_spot",
+    "name": "Peach___bacterial_spot",
     "description": "Cause: Bacterial spot is caused by the Xanthomonas campestris bacterium, a pathogen that is widespread globally. The bacterium infects peach trees through wounds or natural openings in the leaves and fruit, thriving in warm, humid conditions and causing significant damage to the plant.\nTreatment: While there's no cure for bacterial spot, several measures can reduce its severity and prevent its spread.\nRemove affected fruit with a sharp knife, sealing them in bags away from the garden to prevent spreading.\nPrune infected branches with sterilized shears, disposing of them in sealed bags to prevent further contamination.\nMaintain a clean area around the peach tree by removing weeds and debris, as they can foster disease spread. Water the tree at the base to keep foliage dry and discourage bacterial spot.\nApply copper-based fungicide every 7-10 days as directed on the label to reduce bacterial spot severity.\nPrevention: First, select resistant peach varieties suitable for your climate. Second, maintain good sanitation by keeping the area around peach trees clean from debris and fallen fruit, and promptly removing dead or diseased branches. Third, ensure optimal soil pH between 6.0 and 6.5, testing soil as needed. Fourth, water trees deeply and infrequently to keep soil evenly moist. Fifth, use balanced fertilizers low in nitrogen, following package instructions. Finally, employ pesticides like copper-based fungicides, following label instructions precisely. By following these practices, you can effectively prevent bacterial spot on your peach trees and ensure a healthy harvest.\nTop of Form\n"
   },
   {
     "id": "28",
-    "name": "Peach_healthy",
+    "name": "Peach___healthy",
     "description": "Don't worry the plant is healthy.\n"
   },
   {
     "id": "29",
-    "name": "Potato_bacterial_wilt",
+    "name": "Potato___bacterial_wilt",
     "description": "Cause: Bacterial wilt is caused by a soil-borne bacterium called Ralstonia solanacearum (formerly known as Pseudomonas solanacearum). It primarily affects the roots of potatoes, entering through points of injury caused by farming tools, equipment, or soil pests.\nTreatment: Bacterial wilt is challenging to control and eliminate due to the bacteria's soil-borne nature. The following measures can help minimize its spread:\nMachinery, Bags, and Equipment: • Keep machinery within diseased areas during operations. • Disinfect machinery in dedicated wash-down areas after use in affected areas. • Use high-pressure washing to clean machinery, sheds, and equipment, removing soil. • Thoroughly clean and disinfect second-hand bags or bins before reuse, and discard if necessary.\nVehicles: • Load and unload vehicles only in designated areas away from potato fields. • Choose transport routes that minimize travel through potato paddocks.\nClothing and Boots: • Ensure personnel change into clean clothing and boots upon leaving affected areas, or disinfect boots. • Require visitors, contractors, and workers to wear protective clothing and footwear on the property.\nDiseased Produce: • After harvest, bury all diseased and discarded tubers at least 1 meter underground. • Avoid using produce from diseased crops as seed.\nPreventing bacterial wilt: Implement the following measures to prevent bacterial wilt: • Rotate crops with pastures, cereals, and non-solanaceous crops for periods exceeding 5 years. • Use certified seed from trusted sources. • Plant in areas where bacterial wilt hasn't been previously observed. • Control self-sown potatoes. • Manage weed hosts (such as nightshade and thorn apple) in channels and paddocks after potato cropping. • Avoid deep ploughing, as the bacteria can survive in deep, cool soil layers. • Manage irrigation water to prevent contamination of soil or water sources. • Regularly inspect crops for disease symptoms and remove and destroy affected plants and tubers. • Use livestock to clean up chats, discarded tubers, and crop debris, but prevent their return to clean paddocks. • Do not return potato waste, such as oversized, misshapen, or diseased tubers, to paddocks.\n"
   },
   {
@@ -156,7 +156,7 @@
   },
   {
     "id": "31",
-    "name": "Potato___healthy",
+    "name": "Potato ___healthy",
     "description": "Don’t worry the plant is healthy\n"
   },
   {
