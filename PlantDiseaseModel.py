@@ -8,10 +8,9 @@ import torch
 import io
 import json
 import timm
-import json
 import torch.nn as nn
-
-
+import numpy as np
+import cv2
 
 app = Flask(__name__)
 
@@ -21,66 +20,116 @@ app.logger.setLevel(logging.INFO)
 
 num_classes = 61
 
-class PlantDiseaseModel(nn.Module):
-    def __init__(self, num_classes):
-        super(PlantDiseaseModel, self).__init__()
-        # Load the pretrained backbone
-        self.backbone = timm.create_model("rexnet_150", pretrained=True)
-        
-        # Check the structure of the backbone
-        backbone_layers = list(self.backbone.children())
-        
-        # Modify the backbone architecture to remove the classifier
-        # If your backbone has a classifier, remove it
-        if hasattr(self.backbone, "classifier"):
-            self.backbone = nn.Sequential(*backbone_layers[:-1])
-        
-        # Add custom fully connected layers
-        self.fc = nn.Sequential(
-           nn.Linear(1000, 512),  
-           nn.ReLU(),
-           nn.Linear(512, num_classes)
-        )
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+m = timm.create_model("rexnet_150", pretrained=True, num_classes=num_classes).to(device)
 
-    def forward(self, x):
-        # Forward pass through the backbone and custom layers
-        x = self.backbone(x)
-        x = x.flatten(1)
-        x = self.fc(x)
-        return x
+# Transform code
+mean, std, im_size = [0.485, 0.456, 0.406], [0.229, 0.224, 0.225], 224
+tfs = transforms.Compose([transforms.Resize((im_size, im_size)), transforms.ToTensor(), transforms.Normalize(mean=mean, std=std)])
+
+class SaveFeatures():
+    """ Extract pretrained activations"""
+    features = None
+    def __init__(self, m):
+        self.hook = m.register_forward_hook(self.hook_fn)
+    def hook_fn(self, module, input, output):
+        self.features = ((output.cpu()).data).numpy()
+    def remove(self): self.hook.remove()
+
+def getCAM(conv_fs, linear_weights, class_idx):
+    bs, chs, h, w = conv_fs.shape
+    cam = linear_weights[class_idx].dot(conv_fs[0, :, :, ].reshape((chs, h * w)))
+    cam = cam.reshape(h, w)
+
+    return (cam - np.min(cam)) / np.max(cam)
+
+def test_single_image(model, device, image, final_conv, fc_params, cls_names=None):
+    weight = np.squeeze(fc_params[0].cpu().data.numpy())
+    activated_features = SaveFeatures(final_conv)
+
+    # Move image to device and make prediction
+    image = image.to(device)
+    pred_class = torch.argmax(model(image.unsqueeze(0)), dim=1).item()
+
+    # Get CAM for the predicted class
+    heatmap = getCAM(activated_features.features, weight, pred_class)
+    # Clean up
+    activated_features.remove()
+
+    return pred_class, heatmap
+
+# Preprocess the image
+def preprocess_image(original_image):
+    try:
+        # Apply the desired transformations (resize, normalize, etc.)
+        transform = transforms.Compose([
+           transforms.Resize((224, 224)),
+           transforms.ToTensor(),
+           transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+        ])
+
+        # Convert RGBA to RGB if the image has an alpha channel
+        if original_image.mode == 'RGBA':
+            original_image = original_image.convert('RGB')
+
+        # Apply the transformations to the original image
+        transformed_image = transform(original_image)
+
+        # Add a batch dimension to the input tensor
+        transformed_image = transformed_image.unsqueeze(0)
+
+        # Make predictions using the model
+        prediction_result = predict_image(transformed_image)
+
+        return prediction_result
+
+    except Exception as e:
+        app.logger.error(f"Error during photo upload and prediction: {str(e)}")
+        return {"status": 500, "message": "Internal Server Error", "error_details": str(e)}
+
+def predict_image(transformed_image):
+    try:
+        # Ensure the model is in evaluation mode
+        m.eval()
+
+        # Forward pass through the model
+        with torch.no_grad():
+            # Pass the transformed image through the model
+            output = m(transformed_image.to(device))
+
+        # Apply softmax to get probabilities
+        probabilities = torch.softmax(output, dim=-1)[0]
+
+        # Get the predicted class index
+        predicted_class_index = torch.argmax(probabilities).item()
+
+        # Directly access label using index
+        predicted_class_label = list(classes.keys())[predicted_class_index]
+
+        # Create a JSON response
+        result = {
+            "status": 200,
+            "message": "Prediction successful",
+            "predicted_class_label": predicted_class_label,
+            #"probabilities": probabilities.tolist(),
+            #"input_tensor_shape": transformed_image.shape[1:]  # Exclude batch dimension
+        }
+
+        return result
+
+    except Exception as e:
+        app.logger.error(f"Error during prediction: {str(e)}")
+        return {"status": 500, "message": "Internal Server Error", "error_details": str(e)}
 
 # Load the model weights from config.json
 with open('config.json') as config_file:
     config = json.load(config_file)
 
 model_weights_path = config['model_path']
-
-# Instantiate the model
-plant_disease_model = PlantDiseaseModel(num_classes)
-
-# Load the pre-trained weights
-try:
-    checkpoint = torch.load(model_weights_path, map_location=torch.device('cpu'))
-    # Load only compatible layers
-    model_dict = plant_disease_model.state_dict()
-    pretrained_dict = {k: v for k, v in checkpoint.items() if k in model_dict}
-    plant_disease_model.load_state_dict(pretrained_dict, strict=False)
-    plant_disease_model.eval()  # Set model to evaluation mode
-    app.logger.info("Pre-trained weights loaded successfully.")
-except Exception as e:
-    app.logger.error(f"Error loading pre-trained weights: {str(e)}")
-
-# Load the pre-trained weights
-try:
-    checkpoint = torch.load(model_weights_path, map_location=torch.device('cpu'))
-    # Load only compatible layers
-    model_dict = plant_disease_model.state_dict()
-    pretrained_dict = {k: v for k, v in checkpoint.items() if k in model_dict}
-    plant_disease_model.load_state_dict(pretrained_dict, strict=False)
-    plant_disease_model.eval()  # Set model to evaluation mode
-    app.logger.info("Pre-trained weights loaded successfully.")
-except Exception as e:
-    app.logger.error(f"Error loading pre-trained weights: {str(e)}")   
+# Example usage:
+m.load_state_dict(torch.load(model_weights_path, map_location=torch.device('cpu')))
+m.eval()
+final_conv, fc_params = m.features[-1], list(m.head.fc.parameters())
 
 # Dictionary of plant disease classes
 classes = {
@@ -145,12 +194,12 @@ classes = {
     'Tomato___septoria_leaf_spot': 58,
     'Tomato___spider_mites': 59,
     'Tomato___target_spot': 60
-   
 }
+
 # Define allowed file extensions
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
-#check if it from allowed files
+# Check if it is from allowed files
 def allowed_file(filename):
     """Check if the file extension is allowed."""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -183,80 +232,12 @@ def upload_photos_and_predict():
         # Preprocess the image
         img = preprocess_image(img)
 
-        # # Make predictions
-        # prediction_result = predict_image(img)
-
         return jsonify(img), 200
 
     except Exception as e:
         app.logger.error(f"Unhandled error during photo upload and prediction: {str(e)}")
         result = {"status": 500, "message": "Internal Server Error", "error_details": str(e)}
         return jsonify(result), 500
-
-def preprocess_image(original_image):
-    try:
-        # Apply the desired transformations (resize, normalize, etc.)
-        transform = transforms.Compose([
-           transforms.Resize((224, 224)),
-           transforms.ToTensor(),
-           transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
-        ])
-
-        # Convert RGBA to RGB if the image has an alpha channel
-        if original_image.mode == 'RGBA':
-            original_image = original_image.convert('RGB')
-
-        # Apply the transformations to the original image
-        transformed_image = transform(original_image)
-
-        # Add a batch dimension to the input tensor
-        transformed_image = transformed_image.unsqueeze(0)
-
-        # Make predictions using the model
-        prediction_result = predict_image(transformed_image)
-
-        return prediction_result
-
-    except Exception as e:
-        app.logger.error(f"Error during photo upload and prediction: {str(e)}")
-        return {"status": 500, "message": "Internal Server Error", "error_details": str(e)}
-
-
-def predict_image(transformed_image):
-    try:
-        # Ensure the model is in evaluation mode
-        plant_disease_model.eval()
-
-        # Forward pass through the model
-        with torch.no_grad():
-            # Pass the transformed image through the model
-            output = plant_disease_model(transformed_image)
-
-        # Apply softmax to get probabilities
-        probabilities = torch.softmax(output, dim=-1)[0]
-
-        # Get the predicted class index
-        predicted_class_index = torch.argmax(probabilities).item()
-
-        # Directly access label using index
-        predicted_class_label = list(classes.keys())[predicted_class_index]
-
-        # Create a JSON response
-        result = {
-            "status": 200,
-            "message": "Prediction successful",
-            "predicted_class_label": predicted_class_label,
-            #"probabilities": probabilities.tolist(),
-            #"input_tensor_shape": transformed_image.shape[1:]  # Exclude batch dimension
-        }
-
-        return result
-
-    except Exception as e:
-        app.logger.error(f"Error during prediction: {str(e)}")
-        return {"status": 500, "message": "Internal Server Error", "error_details": str(e)}
-
-
 
 # Load disease data from JSON file
 with open('Treatment_Recommendions.json', 'r') as f:
@@ -292,8 +273,6 @@ def get_disease_recommendation():
         app.logger.error(f"Error retrieving disease recommendation: {str(e)}")
         result = {"status": 500, "message": "Internal Server Error", "error_details": str(e)}
         return jsonify(result), 500
-
-
 
 # Custom error handler for 404 errors
 @app.errorhandler(404)
